@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         width: '100%',
+        color: 'black'
     },
     title: {
         color: '#444',
