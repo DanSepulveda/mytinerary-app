@@ -3,6 +3,7 @@ import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers/rootReducer';
 import { Provider } from 'react-redux';
+// import Footer from './components/Footer';
 
 import Home from './screens/Home';
 import Cities from './screens/Cities';
@@ -23,6 +24,7 @@ const App = () => {
       {/* <City /> */}
       {/* <Login /> */}
       {/* <Signup /> */}
+      {/* <Footer /> */}
     </Provider>
 
   )

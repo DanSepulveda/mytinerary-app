@@ -15,6 +15,7 @@ export default Hero
 const styles = StyleSheet.create({
     lolo: {
         width: '100%',
-        height: Dimensions.get('window').height / 2
+        height: Dimensions.get('window').height,
+        marginBottom: 60
     }
 })

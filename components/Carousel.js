@@ -65,7 +65,7 @@ const HomeCarousel = () => {
         );
     }
     return (
-        <View style={styles.hola}>
+        <View style={styles.container}>
             <Carousel
                 layout={'default'}
                 data={items}
@@ -102,19 +102,7 @@ export default HomeCarousel
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-        flex: 1,
         alignItems: 'center'
-    },
-    //CAROUSEL
-    title: {
-        color: '#444',
-        fontSize: 30,
-        textAlign: 'center',
-        marginBottom: 15,
-        fontWeight: 'bold',
-        borderBottomWidth: 2,
-        borderBottomColor: '#df5e5e'
     },
     slide: {
         width: '100%',
@@ -126,7 +114,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
         borderRadius: 15,
-        // overflow: 'hidden'
+        overflow: 'hidden'
     },
     cityName: {
         width: '100%',
@@ -135,8 +123,5 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         padding: 5,
         fontSize: 25
-    },
-    hola: {
-        backgroundColor: 'red'
     }
 })

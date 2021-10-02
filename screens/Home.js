@@ -1,8 +1,11 @@
 import React, { useRef } from 'react'
-import { View, StyleSheet, Text, SafeAreaView, StatusBar, Platform, Dimensions, ImageBackground, ScrollView } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView, StatusBar, Platform, Dimensions, ImageBackground, ScrollView, Image } from 'react-native';
 
 import Hero from '../components/Hero';
+import Information from './Information';
 import HomeCarousel from '../components/Carousel';
+import CallToAction from '../components/CallToAction';
+import Footer from '../components/Footer';
 // import { StatusBar } from 'expo-status-bar';
 
 const Home = () => {
@@ -11,10 +14,11 @@ const Home = () => {
             <ScrollView style={styles.scrollView}>
                 <Hero />
                 <Text style={styles.title}>Why Choose US</Text>
+                <Information />
+                <CallToAction />
                 <Text style={styles.title}>Popular Mytineraries</Text>
                 <HomeCarousel />
-                <HomeCarousel />
-                <HomeCarousel />
+                <Footer />
             </ScrollView>
         </SafeAreaView>
     )
@@ -26,11 +30,10 @@ const styles = StyleSheet.create({
         marginTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
         flex: 1,
         alignItems: 'center',
-        backgroundColor: 'green'
+        backgroundColor: '#eee'
     },
     scrollView: {
         width: '100%',
-        color: 'black'
     },
     title: {
         color: '#444',
@@ -39,6 +42,7 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         fontWeight: 'bold',
         borderBottomWidth: 2,
-        borderBottomColor: '#df5e5e'
+        borderBottomColor: '#df5e5e',
+        marginHorizontal: 50
     }
 })
