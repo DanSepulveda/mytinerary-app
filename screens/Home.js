@@ -1,21 +1,20 @@
-import React, { useRef } from 'react'
-import { View, StyleSheet, Text, SafeAreaView, StatusBar, Platform, Dimensions, ImageBackground, ScrollView, Image } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, SafeAreaView, ScrollView } from 'react-native';
 
 import Hero from '../components/Hero';
-import Information from './Information';
+import Information from '../components/Information';
 import HomeCarousel from '../components/Carousel';
 import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
-// import { StatusBar } from 'expo-status-bar';
 
-const Home = () => {
+const Home = (props) => {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView}>
                 <Hero />
                 <Text style={styles.title}>Why Choose US</Text>
                 <Information />
-                <CallToAction />
+                <CallToAction props={props} />
                 <Text style={styles.title}>Popular Mytineraries</Text>
                 <HomeCarousel />
                 <Footer />
@@ -27,7 +26,6 @@ export default Home
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
         flex: 1,
         alignItems: 'center',
         backgroundColor: '#eee'
@@ -39,10 +37,10 @@ const styles = StyleSheet.create({
         color: '#444',
         fontSize: 30,
         textAlign: 'center',
-        marginBottom: 15,
-        fontWeight: 'bold',
+        marginBottom: 30,
         borderBottomWidth: 2,
         borderBottomColor: '#df5e5e',
-        marginHorizontal: 50
+        marginHorizontal: 50,
+        fontFamily: 'Nunito_900Black'
     }
 })

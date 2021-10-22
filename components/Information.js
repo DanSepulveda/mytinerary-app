@@ -6,19 +6,19 @@ const Information = () => {
         {
             title: "Quality",
             content:
-                "MyTinerary is certified by the Japanese Ministry of Land, Infrastructure, Transport and Tourism, and our commitment to professional staff development has been recognised with an education award in Japan.",
+                "MyTinerary is certified by the Japanese Ministry of Land, Infrastructure, Transport and Tourism.",
             img: "https://mytinerary-dansep.herokuapp.com/assets/quality.png",
         },
         {
             title: "Price",
             content:
-                "We are happy to offer our clients the best rates on our itineraries, transfers, food and other services. We have several contracts with some suppliers, so we can offer you a lower price",
+                "We are happy to offer our clients the best rates on our itineraries, transfers, food and other services.",
             img: "https://mytinerary-dansep.herokuapp.com/assets/price.png",
         },
         {
             title: "Support",
             content:
-                "We know that there is no unique way to make a perfect trip because each person has his special needs and desires. We always listen to you first and then suggest the best itinerary for you",
+                "We know that there is no unique way to make a perfect trip so we always suggest the best itinerary for you",
             img: "https://mytinerary-dansep.herokuapp.com/assets/support.png",
         },
     ];
@@ -42,12 +42,10 @@ export default Information
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        marginBottom: 50
-        // backgroundColor: 'red',
+        marginBottom: 50,
     },
     card: {
         width: '90%',
-        // backgroundColor: 'blue',
         flexDirection: 'row',
         marginBottom: 30,
         paddingVertical: 10,
@@ -55,7 +53,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         shadowColor: "#000",
         shadowOpacity: 0.25,
-        // shadowRadius: 3.84,
         elevation: 5,
     },
     cardImage: {
@@ -65,5 +62,8 @@ const styles = StyleSheet.create({
     },
     description: {
         flexShrink: 1,
+        fontFamily: 'Nunito_400Regular',
+        fontSize: 16,
+        textAlign: 'justify'
     }
 })

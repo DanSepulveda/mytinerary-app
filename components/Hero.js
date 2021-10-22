@@ -3,7 +3,7 @@ import { Dimensions, ImageBackground, StyleSheet, Text, View } from "react-nativ
 
 const Hero = () => {
     return (
-        <ImageBackground source={require('../assets/cities/tokyo3.png')} style={styles.lolo}>
+        <ImageBackground source={require('../assets/cities/tokyo2.png')} style={styles.lolo}>
             <Text>hola</Text>
         </ImageBackground>
 

@@ -2,65 +2,20 @@ import React, { useState } from 'react'
 import { View, StyleSheet, Text, SafeAreaView, StatusBar, Platform, Dimensions, ImageBackground, ScrollView } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
-const HomeCarousel = () => {
-    const items = [
-        {
-            src: require("../assets/cities/kamakura.png"),
-            name: "Kamakura",
-        },
-        {
-            src: require("../assets/cities/kobe.png"),
-            name: "Kobe",
-        },
-        {
-            src: require("../assets/cities/kyoto.png"),
-            name: "Kyoto",
-        },
-        {
-            src: require("../assets/cities/nagasaki.png"),
-            name: "Nagasaki",
-        },
-        {
-            src: require("../assets/cities/nara.png"),
-            name: "Nara",
-        },
-        {
-            src: require("../assets/cities/okinawa.png"),
-            name: "Okinawa",
-        },
-        {
-            src: require("../assets/cities/osaka.png"),
-            name: "Osaka",
-        },
-        {
-            src: require("../assets/cities/tokyo.png"),
-            name: "Tokyo",
-        },
-        {
-            src: require("../assets/cities/yokohama.png"),
-            name: "Yokohama",
-        },
-        {
-            src: require("../assets/cities/sapporo.png"),
-            name: "Sapporo",
-        },
-        {
-            src: require("../assets/cities/hiroshima.png"),
-            name: "Hiroshima",
-        },
-        {
-            src: require("../assets/cities/kumamoto.png"),
-            name: "Kumamoto",
-        },
-    ];
+const Activity = (props) => {
+    const { activities } = props
+    console.log(activities)
+
     const [slide, setSlide] = useState(0)
-    const sliderWidth = Dimensions.get('screen').width - 30
+    const sliderWidth = Dimensions.get('screen').width - 80
+
     const _renderItem = ({ item, index }) => {
         return (
             <View style={styles.slide} key={index}>
-                <ImageBackground source={item.src} style={styles.background}>
-                    <Text style={styles.cityName}>{item.name}</Text>
+                <ImageBackground source={{ uri: `https://mytinerary-dansep.herokuapp.com/assets/activities/${item.image}` }} style={styles.background}>
                 </ImageBackground>
+                <Text style={styles.activityTitle}>{item.title}</Text>
+                <Text style={styles.activityDescription}>{item.description}</Text>
             </View>
         );
     }
@@ -68,7 +23,7 @@ const HomeCarousel = () => {
         <View style={styles.container}>
             <Carousel
                 layout={'default'}
-                data={items}
+                data={activities}
                 renderItem={_renderItem}
                 sliderWidth={sliderWidth}
                 itemWidth={sliderWidth}
@@ -80,7 +35,7 @@ const HomeCarousel = () => {
                 activeAnimationType={'spring'}
             />
             <Pagination
-                dotsLength={items.length}
+                dotsLength={activities.length}
                 activeDotIndex={slide}
                 dotStyle={{
                     width: 7,
@@ -95,24 +50,30 @@ const HomeCarousel = () => {
     )
 }
 
-export default HomeCarousel
+export default Activity
 
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        marginBottom: 30
+        marginBottom: 15,
     },
     slide: {
         width: '100%',
-        alignItems: 'center'
+        alignItems: 'center',
+        shadowColor: "#000",
+        shadowOpacity: 0.25,
+        borderRadius: 15,
+        paddingBottom: 20,
+        backgroundColor: '#ccc',
     },
     background: {
         width: '100%',
-        height: 300,
+        height: 150,
         justifyContent: 'flex-end',
         alignItems: 'center',
-        borderRadius: 15,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15
     },
     cityName: {
         width: '100%',
@@ -121,5 +82,18 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         padding: 5,
         fontSize: 25
+    },
+    activityTitle: {
+        color: '#444',
+        fontFamily: 'Nunito_900Black',
+        fontSize: 25,
+        marginVertical: 15,
+    },
+    activityDescription: {
+        color: '#444',
+        fontFamily: 'Nunito_400Regular',
+        fontSize: 18,
+        marginHorizontal: 5,
+        textAlign: 'center'
     }
 })
